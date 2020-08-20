@@ -50,7 +50,7 @@ public class DentnavMailServiceController {
 	
 	@GetMapping("/check")
 	public String sendMail() {
-		return "welcom to www.dentnav.com Mail service";
+		return "welcom to www.dentnav.com service";
 	}
 	
 	@GetMapping("/protectedStatusFlag")
