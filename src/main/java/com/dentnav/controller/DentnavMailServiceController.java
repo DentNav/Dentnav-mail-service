@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dentnav.service.MailService;
@@ -15,6 +16,7 @@ import com.dentnav.service.pojo.ProtectedInfo;
 
 @RestController
 @CrossOrigin
+@RequestMapping("dentnav")
 public class DentnavMailServiceController {
 
 	@Autowired
@@ -23,7 +25,7 @@ public class DentnavMailServiceController {
     @Autowired
     private Environment env;
 
-	@PostMapping("dentnav/sendmail")
+	@PostMapping("/sendmail")
 	public String sendMail(@RequestBody Mail mail) {
 		
 		System.out.println("mail "+mail);
@@ -46,17 +48,17 @@ public class DentnavMailServiceController {
 		return "Mail sent successfully";
 	}
 	
-	@GetMapping("dentnav/check")
+	@GetMapping("/check")
 	public String sendMail() {
 		return "welcom to www.dentnav.com Mail service";
 	}
 	
-	@GetMapping("dentnav/protectedStatusFlag")
+	@GetMapping("/protectedStatusFlag")
 	public ProtectedInfo fetchProctectedStatus() {
 		return new ProtectedInfo();
 	}
 	
-	@GetMapping("dentnav/loginSingUpFlag")
+	@GetMapping("/loginSingUpFlag")
 	public LoginSingUpInfo fetchLoginSingUpStatus() {
 		return new LoginSingUpInfo();
 	}
