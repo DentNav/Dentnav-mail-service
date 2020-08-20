@@ -1,1 +1,1 @@
-# Dentnav-mail_service
+# Dentnav-mail-service
