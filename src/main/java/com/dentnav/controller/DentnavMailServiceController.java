@@ -48,7 +48,7 @@ public class DentnavMailServiceController {
 		return "Mail sent successfully";
 	}
 	
-	@GetMapping("/check")
+	@RequestMapping
 	public String sendMail() {
 		return "welcom to www.dentnav.com service";
 	}
